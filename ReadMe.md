@@ -7,7 +7,7 @@
 # Language 
 scala
 
-#Update Time
+# Update Time
 2017-07-19
 
-#FlinkStream handle kafka producerStream data
+# FlinkStream handle kafka producerStream data
