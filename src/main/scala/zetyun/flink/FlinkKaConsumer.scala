@@ -11,7 +11,7 @@ import org.apache.flink.api.scala._
 /**
   * Created by ryan on 17-7-17.
   */
-class FlinkKaConsumer {
+object FlinkKaConsumer {
   def main(args: Array[String]): Unit ={
     val topic = "JsonSteam"
     val env = StreamExecutionEnvironment.getExecutionEnvironment
@@ -22,7 +22,7 @@ class FlinkKaConsumer {
     val simpleStrSchema = new SimpleStringSchema()
     val flinkkafconsumer = new FlinkKafkaConsumer010[String](topic, simpleStrSchema, properties)
     val stream = env.addSource(flinkkafconsumer)
-    //stream.setParallelism(4)
+    stream.setParallelism(4)
     val age1 = JsonPath.read(stream, ".store.persons[0].age")
     val age2 = JsonPath.read(stream, ".store.persons[0].age")
     System.out.println("Ans is Person 1 and Person2 ages is : " + Integer.parseInt(age1) + Integer.parseInt(age2))

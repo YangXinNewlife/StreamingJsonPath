@@ -7,7 +7,7 @@ import org.apache.kafka.clients.producer._
 /**
   * Created by ryan on 17-7-17.
   */
-class JsonProducer {
+object JsonProducer {
   val topic = "JsonSteam"
   val props = new Properties()
   props.put("bootstrap.servers", "192.168.1.81:6667")
