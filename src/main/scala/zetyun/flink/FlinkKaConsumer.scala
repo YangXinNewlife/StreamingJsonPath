@@ -11,7 +11,7 @@ import org.apache.flink.api.scala._
 /**
   * Created by ryan on 17-7-17.
   */
-class FlinkKaConsumer {
+object FlinkKaConsumer {
   def main(args: Array[String]): Unit ={
     val topic = "JsonSteam"
     val env = StreamExecutionEnvironment.getExecutionEnvironment
